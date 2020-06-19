@@ -18,4 +18,4 @@ We use an updated version of the dictionary created by Tim Loughran and Bill McD
 
 ## Organization and Contents
 ### Data Folder
-This folder houses all the data used for the project, it is split into two sections: "Sentiment Dictionary" which houses the dictionary and "Transcripts" which houses the transcripts we analyzed.
+This folder houses all the data used for the project. it is split into two sections: "Sentiment Dictionary" which holds the dictionary and "Transcripts" which holds the transcripts we analyzed (both folders hold all accompanying scripts that were used to wrangle the data).
