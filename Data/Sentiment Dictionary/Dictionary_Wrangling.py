@@ -12,7 +12,7 @@ from pandas import ExcelFile
 negative = pd.read_excel('/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx', sheet_name = 1)
 neglist = negative['ABANDON'].tolist()
 neglist.append('ABANDON')
-print(neglist)
+
 positive = pd.read_excel("/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx",sheet_name="Positive")
 poslist = positive['ABLE'].tolist()
 poslist.append('ABLE')
@@ -60,7 +60,7 @@ for word in allwords:
     elif word in wmlist:
         dictionary[word] += "Weak Modal"
     else:
-        dictionary[word] = "Constraining"
+        dictionary[word] += "Constraining"
 
 print(dictionary)
 #allwords = pd.concat(negative, positive, uncertainty, litigious, StrongModal, WeakModal, Constraining)
