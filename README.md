@@ -15,3 +15,5 @@
 We use an updated version of the dictionary created by Tim Loughran and Bill McDonald and described in their 2011 paper entitled "When is a Liability not a Liability?  Textual Analysis, Dictionaries, and 10-Ks" published in the *Journal of Finance*. 
 
 <https://drive.google.com/file/d/15UPaF2xJLSVz8DYuphierz67trCxFLcl/view?usp=sharing>
+
+## Organization and Contents
