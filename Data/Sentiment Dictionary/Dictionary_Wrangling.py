@@ -11,27 +11,35 @@ from pandas import ExcelFile
 # Read Files
 negative = pd.read_excel('/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx', sheet_name = 1)
 neglist = negative['ABANDON'].tolist()
-
+neglist.append('ABANDON')
+print(neglist)
 positive = pd.read_excel("/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx",sheet_name="Positive")
-poslist =
+poslist = positive['ABLE'].tolist()
+poslist.append('ABLE')
 
 uncertainty = pd.read_excel("/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx",sheet_name="Uncertainty")
-ulist=
+ulist = uncertainty['ABEYANCE'].tolist()
+ulist.append('ABEYANCE')
 
 litigious = pd.read_excel("/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx", sheet_name="Litigious")
-litlist=
+litlist = litigious['ABOVEMENTIONED'].tolist()
+litlist.append('ABOVEMENTIONED')
 
 StrongModal = pd.read_excel("/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx",sheet_name="StrongModal")
-smlist=
+smlist = StrongModal['ALWAYS'].tolist()
+smlist.append('ALWAYS')
 
 WeakModal = pd.read_excel("/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx", sheet_name="WeakModal")
-wmlist=
+wmlist = WeakModal['ALMOST'].tolist()
+wmlist.append('ALMOST')
 
 Constraining = pd.read_excel("/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx", sheet_name="Constraining")
-conslist=
+conslist = Constraining['ABIDE'].tolist()
+conslist.append('ABIDE')
 
 # Wrangle
 allwords = neglist + poslist + ulist + litlist + smlist + wmlist + conslist
+sorted(allwords)
 
 #Create Dictionary such that keys are words and values are the sentiment the word is associated with
 #ASK ABOUT INDICATORS
@@ -54,6 +62,7 @@ for word in allwords:
     else:
         dictionary[word] = "Constraining"
 
+print(dictionary)
 #allwords = pd.concat(negative, positive, uncertainty, litigious, StrongModal, WeakModal, Constraining)
 
 # Write CSv
