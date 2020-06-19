@@ -7,6 +7,7 @@
 import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
+from pandas import DataFrame
 
 # Read Files
 negative = pd.read_excel('/Users/Sanscubed/Desktop/PythonPractice/Sentiment Project/Sentiment-Project/Data/Sentiment Dictionary/LoughranMcDonald_SentimentWordLists_2018.xlsx', sheet_name = 1)
@@ -39,10 +40,8 @@ conslist.append('ABIDE')
 
 # Wrangle
 allwords = neglist + poslist + ulist + litlist + smlist + wmlist + conslist
-sorted(allwords)
 
 #Create Dictionary such that keys are words and values are the sentiment the word is associated with
-#ASK ABOUT INDICATORS
 dictionary = {}
 for word in allwords:
     if word not in dictionary:
@@ -62,8 +61,9 @@ for word in allwords:
     else:
         dictionary[word] += "Constraining"
 
-print(dictionary)
-#allwords = pd.concat(negative, positive, uncertainty, litigious, StrongModal, WeakModal, Constraining)
+#Create Dataframe
+df = DataFrame(list(sorted(dictionary.items())),columns = ['Word','Sentiment'])
+print(df)
 
 # Write CSv
 
